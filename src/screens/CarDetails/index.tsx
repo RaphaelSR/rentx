@@ -2,7 +2,20 @@ import React from "react";
 import { BackButton } from "../../components/BackButton";
 import { ImageSlider } from "../../components/ImageSlider";
 
-import { Container, Header, CarImages } from "./styles";
+import {
+  Container,
+  Header,
+  CarImages,
+  Content,
+  Details,
+  Description,
+  Brand,
+  Name,
+  Rent,
+  Period,
+  Price,
+  About
+} from "./styles";
 
 export function CarDetails() {
   return (
@@ -17,6 +30,27 @@ export function CarDetails() {
           ]}
         />
       </CarImages>
+
+      <Content>
+        <Details>
+          <Description>
+            <Brand>Lamborghini</Brand>
+            <Name>Huracan</Name>
+          </Description>
+
+          <Rent>
+            <Period>Ao dia</Period>
+            <Price>R$ 500,00</Price>
+          </Rent>
+        </Details>
+
+        <About>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quas
+          dolorem tempora odio temporibus possimus fuga, ut pariatur suscipit
+          vero rerum minus maxime debitis nulla quisquam, omnis necessitatibus
+          iste amet.
+        </About>
+      </Content>
     </Container>
   );
 }
