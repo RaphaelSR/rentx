@@ -24,7 +24,9 @@ import {
   Price,
   About,
   Acessories,
+  Footer,
 } from "./styles";
+import { Button } from "../../components/Button";
 
 export function CarDetails() {
   return (
@@ -67,7 +69,12 @@ export function CarDetails() {
           vero rerum minus maxime debitis nulla quisquam, omnis necessitatibus
           iste amet.
         </About>
+        
       </Content>
+
+      <Footer>
+      <Button title="Confirmar"/>
+      </Footer>
     </Container>
   );
 }
