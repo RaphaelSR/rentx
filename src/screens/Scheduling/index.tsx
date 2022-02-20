@@ -28,6 +28,10 @@ export function Scheduling() {
     navigation.navigate("SchedulingDetails");
   }
 
+  function handleGoBack() {
+    navigation.goBack();
+  }
+
   return (
     <Container>
       <Header>
@@ -36,7 +40,7 @@ export function Scheduling() {
           translucent
           backgroundColor="transparent"
         />
-        <BackButton onPress={() => {}} color={theme.colors.shape} />
+        <BackButton onPress={handleGoBack} color={theme.colors.shape} />
 
         <Title>
           Escolha uma{"\n"}

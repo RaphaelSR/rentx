@@ -14,6 +14,7 @@ export function SchedulingComplete() {
   function handleConfirmRental() {
     navigation.navigate("Home");
   }
+
   return (
     <Container>
       <StatusBar
