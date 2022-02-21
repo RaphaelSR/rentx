@@ -15,19 +15,8 @@ export const Home = () => {
   const [loading, setLoading] = useState(true);
   const navigation = useNavigation();
 
-  const carData = {
-    brand: "audi",
-    name: "RS 5 Coupé",
-    rent: {
-      period: "AO DIA",
-      price: 120,
-    },
-    thumbnail:
-      "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png",
-  };
-
-  function handleCardDetails() {
-    navigation.navigate("CarDetails");
+  function handleCardDetails(car: CarDTO) {
+    navigation.navigate("CarDetails", {car})
   }
 
   useEffect(() => {
@@ -64,7 +53,7 @@ export const Home = () => {
           data={cars}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <Car data={item} onPress={handleCardDetails} />
+            <Car data={item} onPress={() => handleCardDetails(item)} />
           )}
         ></CarList>
       )}
