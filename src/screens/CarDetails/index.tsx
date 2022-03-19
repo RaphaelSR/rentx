@@ -35,7 +35,9 @@ export function CarDetails() {
   const { car } = route.params as Params;
 
   function handleConfirmRental() {
-    navigation.navigate("Scheduling");
+    navigation.navigate("Scheduling", {
+      car,
+    });
   }
   function handleGoBack() {
     navigation.goBack();
@@ -75,7 +77,10 @@ export function CarDetails() {
       </Content>
 
       <Footer>
-        <Button onPress={handleConfirmRental} title="Escolher período do aluguel" />
+        <Button
+          onPress={handleConfirmRental}
+          title="Escolher período do aluguel"
+        />
       </Footer>
     </Container>
   );
