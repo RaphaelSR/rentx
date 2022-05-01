@@ -68,12 +68,17 @@ export function SchedulingDetails() {
 
     const unavailable_dates = [...unavailableDates, ...dates];
 
+    await api.post("schedules_byuser", {
+      user_id: 1,
+      car,
+    });
+
     api
       .put(`/schedules_bycars/${car.id}`, {
         id: car.id,
         unavailable_dates,
       })
-      .then(() => navigation.navigate("Confirmation"))
+      .then(() => navigation.navigate('SchedulingComplete'))
       .catch(() => Alert.alert("Não foi possível confirmar o agendamento."));
   }
 
