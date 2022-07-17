@@ -13,7 +13,7 @@ import Animated, {
 
 const ButtonAnimated = Animated.createAnimatedComponent(RectButton);
 import Logo from "../../assets/logo.svg";
-import Load from "../../components/Load";
+import { LoadAnimation } from "../../components/LoadAnimation";
 import { Car } from "../../components/Car";
 
 import api from "../../services/api";
@@ -95,7 +95,7 @@ export const Home = () => {
         </HeaderContent>
       </Header>
       {loading ? (
-        <Load />
+        <LoadAnimation />
       ) : (
         <CarList
           data={cars}
