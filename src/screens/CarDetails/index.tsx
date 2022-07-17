@@ -89,11 +89,11 @@ export function CarDetails() {
         <Header>
           <BackButton onPress={handleGoBack} />
         </Header>
-        <Animated.View style={sliderCarsStyleAnimation}>
-          <CarImages>
+        <CarImages>
+          <Animated.View style={sliderCarsStyleAnimation}>
             <ImageSlider imagesUrl={car.photos} />
-          </CarImages>
-        </Animated.View>
+          </Animated.View>
+        </CarImages>
       </Animated.View>
 
       <Animated.ScrollView
@@ -126,12 +126,7 @@ export function CarDetails() {
           ))}
         </Accessories>
 
-        <About>
-          {car.about}
-          {car.about}
-          {car.about}
-          {car.about}
-        </About>
+        <About>{car.about}</About>
       </Animated.ScrollView>
 
       <Footer>
