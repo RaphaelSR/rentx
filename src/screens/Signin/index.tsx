@@ -13,11 +13,13 @@ import { Button } from "../../components/Button";
 import theme from "../../styles/theme";
 import { Input } from "../../components/Input";
 import { PasswordInput } from "../../components/PasswordInput";
+import { useAuth } from "../../hooks/auth";
 
 export function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigation();
+  const { signIn } = useAuth();
 
   function handleNewAccount() {
     navigation.navigate("SignupFirstStep");
@@ -33,7 +35,8 @@ export function Signin() {
       });
 
       await schema.validate({ email, password });
-      Alert.alert("Tudo certo!");
+
+      signIn({ email, password });
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         Alert.alert("Opa!", error.message);

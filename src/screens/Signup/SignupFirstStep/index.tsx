@@ -79,6 +79,9 @@ export function SignupFirstStep() {
               iconName="mail"
               placeholder="E-mail"
               keyboardType="email-address"
+              autoCapitalize="none"
+              autoCorrect={false}
+              autoCompleteType="email"
               onChangeText={setEmail}
               value={email}
             />
